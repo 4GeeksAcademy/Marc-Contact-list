@@ -1,16 +1,12 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
+			contactos: [
 				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
+					nombre: "John Doe",
+					correo: "johndoe@example.com",
+					telefono:"(123) 456-7890",
+					direccion:"123 Main St, Bozen, USA"
 				}
 			]
 		},

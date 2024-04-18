@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Contact = () => {
+    const { store, actions } = useContext(Context);
+    const [nombre, setNombre] = useState(store.contactos[0].nombre)
+    const [correo, setCorreo] = useState(store.contactos[0].correo)
+    const [telefono, setTelefono] = useState(store.contactos[0].telefono)
+    const [direccion, setDireccion] = useState(store.contactos[0].direccion)
+    
+
     return(
         <>
             <li className="list-group-item">
@@ -10,10 +18,10 @@ export const Contact = () => {
                     <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" className="img-fluid rounded-circle"/>
                 </div>
                 <div className="col-6">
-                    <h5>John Doe</h5>
-                    <p>johndoe@example.com</p>
-                    <p>(123) 456-7890</p>
-                    <p>123 Main St, Anytown, USA</p>
+                    <h5>{nombre}</h5>
+                    <p>{correo}</p>
+                    <p>{telefono}</p>
+                    <p>{direccion}</p>
                 </div>
                 <div className="col-3 text-right">
                     <button type="button" className="btn btn-danger float-end"><i className="fas fa-trash-alt"></i></button>
